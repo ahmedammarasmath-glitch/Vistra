@@ -1,0 +1,3523 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width,initial-scale=1.0"
+>
+
+<title>VISTRA | Ammar</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --bg:#07090d;
+  --panel:#10141c;
+  --panel2:#171c25;
+  --text:#fff;
+  --muted:#929aa7;
+  --red:#e50914;
+  --red2:#ff3440;
+  --border:#292f39;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+  overflow-x:hidden;
+}
+
+button,
+input{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+  right:0;
+
+  height:70px;
+
+  z-index:1000;
+
+  display:flex;
+
+  align-items:center;
+
+  padding:0 5%;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,.95),
+      rgba(0,0,0,.5),
+      transparent
+    );
+
+  transition:.3s;
+
+}
+
+.navbar.scrolled{
+
+  background:
+    rgba(5,7,10,.97);
+
+  backdrop-filter:
+    blur(15px);
+
+}
+
+.logo{
+
+  font-size:30px;
+
+  font-weight:900;
+
+  letter-spacing:-2px;
+
+  margin-right:40px;
+
+}
+
+.logo span{
+  color:var(--red);
+}
+
+.nav{
+
+  display:flex;
+
+  gap:20px;
+
+}
+
+.nav button{
+
+  background:none;
+
+  border:0;
+
+  color:#9da5b0;
+
+  font-weight:700;
+
+  font-size:13px;
+
+}
+
+.nav button:hover{
+
+  color:white;
+
+}
+
+.nav-right{
+
+  margin-left:auto;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+}
+
+.search{
+
+  width:220px;
+
+  height:38px;
+
+  display:flex;
+
+  align-items:center;
+
+  padding:0 11px;
+
+  border-radius:7px;
+
+  background:#171c24;
+
+  border:1px solid #292f38;
+
+}
+
+.search input{
+
+  width:100%;
+
+  border:0;
+
+  outline:0;
+
+  background:none;
+
+  color:white;
+
+  margin-left:7px;
+
+}
+
+.profile{
+
+  width:38px;
+
+  height:38px;
+
+  border-radius:8px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-weight:900;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e50914,
+      #650007
+    );
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+  height:720px;
+
+  min-height:600px;
+
+  padding:
+    120px 5% 70px;
+
+  display:flex;
+
+  align-items:center;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #07090d 0%,
+      rgba(7,9,13,.88) 30%,
+      rgba(7,9,13,.35) 70%,
+      rgba(7,9,13,.75)
+    ),
+
+    linear-gradient(
+      0deg,
+      #07090d,
+      transparent 45%
+    ),
+
+    url(
+      "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2200&q=85"
+    )
+    center/cover;
+
+}
+
+.hero-content{
+
+  max-width:650px;
+
+}
+
+.badge{
+
+  display:inline-block;
+
+  padding:7px 12px;
+
+  border-radius:50px;
+
+  color:#ff626b;
+
+  background:
+    rgba(229,9,20,.12);
+
+  border:
+    1px solid rgba(229,9,20,.35);
+
+  font-size:10px;
+
+  font-weight:900;
+
+  margin-bottom:18px;
+
+}
+
+.hero h1{
+
+  font-size:
+    clamp(
+      50px,
+      7vw,
+      90px
+    );
+
+  line-height:.9;
+
+  letter-spacing:-5px;
+
+  margin-bottom:20px;
+
+}
+
+.hero h1 span{
+  color:var(--red);
+}
+
+.hero p{
+
+  color:#c4cad2;
+
+  line-height:1.8;
+
+  margin-bottom:20px;
+
+}
+
+.meta{
+
+  display:flex;
+
+  gap:14px;
+
+  flex-wrap:wrap;
+
+  color:#c2c8d0;
+
+  font-size:12px;
+
+  margin-bottom:20px;
+
+}
+
+.rating{
+
+  color:#ffd447;
+
+  font-weight:900;
+
+}
+
+.btn{
+
+  padding:
+    12px 19px;
+
+  border:0;
+
+  border-radius:7px;
+
+  font-weight:900;
+
+  margin-right:6px;
+
+  transition:.2s;
+
+}
+
+.btn:hover{
+
+  transform:
+    translateY(-2px);
+
+}
+
+.white{
+
+  background:white;
+
+  color:#111;
+
+}
+
+.red{
+
+  background:var(--red);
+
+  color:white;
+
+}
+
+.dark{
+
+  background:
+    rgba(255,255,255,.1);
+
+  color:white;
+
+  border:
+    1px solid rgba(255,255,255,.12);
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main{
+
+  margin-top:-65px;
+
+  position:relative;
+
+  z-index:5;
+
+}
+
+.section{
+
+  padding:
+    0 5%;
+
+  margin-bottom:40px;
+
+}
+
+.section-title{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:15px;
+
+}
+
+.section-title h2{
+
+  font-size:21px;
+
+}
+
+.section-title span{
+
+  color:#858d99;
+
+  font-size:11px;
+
+}
+
+.row{
+
+  display:grid;
+
+  grid-auto-flow:column;
+
+  grid-auto-columns:190px;
+
+  gap:15px;
+
+  overflow-x:auto;
+
+  padding:5px 0 15px;
+
+}
+
+.row::-webkit-scrollbar{
+
+  height:6px;
+
+}
+
+.row::-webkit-scrollbar-thumb{
+
+  background:#343a45;
+
+  border-radius:20px;
+
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.card{
+
+  height:280px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:9px;
+
+  background:#151922;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+}
+
+.card:hover{
+
+  transform:
+    scale(1.04)
+    translateY(-4px);
+
+  box-shadow:
+    0 20px 50px
+    rgba(0,0,0,.6);
+
+  z-index:4;
+
+}
+
+.card img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+}
+
+.card-gradient{
+
+  position:absolute;
+
+  inset:35% 0 0;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0,0,0,.97)
+    );
+
+}
+
+.card-info{
+
+  position:absolute;
+
+  left:11px;
+  right:11px;
+  bottom:11px;
+
+}
+
+.card-title{
+
+  font-size:13px;
+
+  font-weight:900;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
+
+}
+
+.card-meta{
+
+  display:flex;
+
+  gap:7px;
+
+  margin-top:5px;
+
+  color:#c0c6ce;
+
+  font-size:9px;
+
+}
+
+.add-button{
+
+  position:absolute;
+
+  right:8px;
+  top:8px;
+
+  width:31px;
+  height:31px;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:
+    rgba(0,0,0,.75);
+
+  color:white;
+
+  font-size:18px;
+
+  z-index:10;
+
+}
+
+.music-card{
+
+  height:215px;
+
+}
+
+.music-play{
+
+  position:absolute;
+
+  left:11px;
+
+  bottom:52px;
+
+  width:42px;
+
+  height:42px;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:var(--red);
+
+  color:white;
+
+  z-index:5;
+
+}
+
+
+/* =====================================================
+   PAGES
+===================================================== */
+
+.page{
+
+  display:none;
+
+  min-height:100vh;
+
+  padding:
+    110px 5% 70px;
+
+}
+
+.page.active{
+  display:block;
+}
+
+.page h1{
+
+  font-size:38px;
+
+  margin-bottom:10px;
+
+}
+
+.page-description{
+
+  color:var(--muted);
+
+  margin-bottom:28px;
+
+}
+
+
+/* =====================================================
+   UPLOAD
+===================================================== */
+
+.upload-box{
+
+  max-width:850px;
+
+  background:var(--panel);
+
+  border:
+    1px solid var(--border);
+
+  border-radius:14px;
+
+  padding:28px;
+
+}
+
+.field{
+
+  margin-bottom:18px;
+
+}
+
+.field label{
+
+  display:block;
+
+  margin-bottom:8px;
+
+  font-size:12px;
+
+  font-weight:900;
+
+}
+
+.field input{
+
+  width:100%;
+
+  padding:12px;
+
+  border-radius:7px;
+
+  border:
+    1px solid #303640;
+
+  background:#080b10;
+
+  color:white;
+
+  outline:0;
+
+}
+
+.file-box{
+
+  border:
+    1px dashed #4a525f;
+
+  border-radius:9px;
+
+  padding:23px;
+
+  color:#929aa5;
+
+}
+
+.file-box input{
+
+  width:100%;
+
+}
+
+
+/* =====================================================
+   UPLOAD LIST
+===================================================== */
+
+.uploaded-list{
+
+  margin-top:28px;
+
+  display:grid;
+
+  gap:10px;
+
+}
+
+.upload-item{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  padding:12px;
+
+  background:#151a22;
+
+  border:
+    1px solid #252b34;
+
+  border-radius:9px;
+
+}
+
+.upload-icon{
+
+  width:58px;
+
+  height:58px;
+
+  border-radius:7px;
+
+  background:#222832;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:24px;
+
+}
+
+.upload-info{
+
+  flex:1;
+
+}
+
+.upload-info strong{
+
+  display:block;
+
+  margin-bottom:4px;
+
+}
+
+.upload-info small{
+
+  color:#8d96a2;
+
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(180px,1fr)
+    );
+
+  gap:17px;
+
+}
+
+
+/* =====================================================
+   PRO
+===================================================== */
+
+.plans{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:18px;
+
+  max-width:1000px;
+
+}
+
+.plan{
+
+  background:var(--panel);
+
+  border:
+    1px solid var(--border);
+
+  border-radius:14px;
+
+  padding:26px;
+
+}
+
+.plan.featured{
+
+  border-color:var(--red);
+
+  box-shadow:
+    0 0 35px
+    rgba(229,9,20,.12);
+
+}
+
+.plan h2{
+  margin-bottom:8px;
+}
+
+.price{
+
+  font-size:33px;
+
+  font-weight:900;
+
+  margin:15px 0;
+
+}
+
+.price span{
+
+  color:#858e9a;
+
+  font-size:11px;
+
+}
+
+.plan ul{
+
+  list-style:none;
+
+  color:#adb5c0;
+
+  line-height:2;
+
+  margin:16px 0;
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal{
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:3000;
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:20px;
+
+  background:
+    rgba(0,0,0,.86);
+
+  backdrop-filter:
+    blur(10px);
+
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+
+  width:
+    min(
+      950px,
+      100%
+    );
+
+  max-height:92vh;
+
+  overflow:auto;
+
+  position:relative;
+
+  border-radius:15px;
+
+  background:#11151d;
+
+  border:
+    1px solid #2a3039;
+
+}
+
+.close{
+
+  position:absolute;
+
+  right:13px;
+  top:13px;
+
+  width:38px;
+  height:38px;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:
+    rgba(0,0,0,.75);
+
+  color:white;
+
+  font-size:22px;
+
+  z-index:20;
+
+}
+
+.modal-image{
+
+  height:380px;
+
+  background:
+    center/cover;
+
+  position:relative;
+
+}
+
+.modal-image:after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      transparent,
+      #11151d
+    );
+
+}
+
+.modal-content{
+
+  padding:
+    0 35px 30px;
+
+  margin-top:-65px;
+
+  position:relative;
+
+  z-index:3;
+
+}
+
+.modal-content h2{
+
+  font-size:34px;
+
+  margin-bottom:10px;
+
+}
+
+.modal-content p{
+
+  color:#bdc4cc;
+
+  line-height:1.8;
+
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.video-modal-box{
+
+  width:
+    min(
+      1100px,
+      100%
+    );
+
+  background:#000;
+
+  border-radius:12px;
+
+  overflow:hidden;
+
+  position:relative;
+
+}
+
+.video-player{
+
+  width:100%;
+
+  display:block;
+
+  max-height:85vh;
+
+  background:#000;
+
+}
+
+.keyboard-help{
+
+  position:absolute;
+
+  left:14px;
+
+  bottom:14px;
+
+  background:
+    rgba(0,0,0,.7);
+
+  color:#ddd;
+
+  padding:7px 10px;
+
+  border-radius:6px;
+
+  font-size:10px;
+
+  pointer-events:none;
+
+}
+
+
+/* =====================================================
+   AUDIO
+===================================================== */
+
+.audio-box{
+
+  padding:
+    20px 30px 30px;
+
+}
+
+.audio-player{
+
+  width:100%;
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+
+  position:fixed;
+
+  left:50%;
+
+  bottom:25px;
+
+  transform:
+    translate(
+      -50%,
+      30px
+    );
+
+  opacity:0;
+
+  background:white;
+
+  color:#111;
+
+  padding:
+    12px 18px;
+
+  border-radius:8px;
+
+  font-size:12px;
+
+  font-weight:900;
+
+  z-index:5000;
+
+  transition:.3s;
+
+}
+
+.toast.show{
+
+  opacity:1;
+
+  transform:
+    translate(
+      -50%,
+      0
+    );
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+  body{
+    padding-bottom:68px;
+  }
+
+  .navbar{
+
+    height:58px;
+
+    padding:
+      0 15px;
+
+  }
+
+  .logo{
+
+    font-size:24px;
+
+    margin-right:0;
+
+  }
+
+  .nav{
+
+    position:fixed;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:65px;
+
+    background:
+      rgba(8,10,14,.98);
+
+    border-top:
+      1px solid #252a32;
+
+    z-index:5000;
+
+    display:flex;
+
+    justify-content:
+      space-around;
+
+    align-items:center;
+
+    gap:0;
+
+  }
+
+  .nav button{
+
+    font-size:8px;
+
+    min-width:45px;
+
+    height:55px;
+
+  }
+
+  .nav-right{
+
+    margin-left:auto;
+
+  }
+
+  .search{
+
+    width:36px;
+
+    padding:0;
+
+    justify-content:center;
+
+    background:none;
+
+    border:0;
+
+  }
+
+  .search input{
+    display:none;
+  }
+
+  .profile{
+
+    width:34px;
+    height:34px;
+
+  }
+
+  .hero{
+
+    height:620px;
+
+    min-height:620px;
+
+    padding:
+      100px 20px 60px;
+
+  }
+
+  .hero h1{
+
+    font-size:
+      clamp(
+        46px,
+        15vw,
+        70px
+      );
+
+    letter-spacing:-3px;
+
+  }
+
+  .hero p{
+
+    font-size:12px;
+
+  }
+
+  main{
+    margin-top:-45px;
+  }
+
+  .section{
+
+    padding:
+      0 15px;
+
+    margin-bottom:28px;
+
+  }
+
+  .section-title h2{
+    font-size:18px;
+  }
+
+  .row{
+
+    grid-auto-columns:
+      145px;
+
+    gap:11px;
+
+  }
+
+  .card{
+
+    height:215px;
+
+  }
+
+  .music-card{
+
+    height:180px;
+
+  }
+
+  .page{
+
+    padding:
+      85px 15px 100px;
+
+  }
+
+  .page h1{
+
+    font-size:30px;
+
+  }
+
+  .grid{
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0,1fr)
+      );
+
+    gap:10px;
+
+  }
+
+  .plans{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .upload-box{
+
+    padding:18px;
+
+  }
+
+  .modal{
+
+    padding:0;
+
+    align-items:flex-end;
+
+  }
+
+  .modal-box{
+
+    width:100%;
+
+    max-height:94vh;
+
+    border-radius:
+      16px 16px 0 0;
+
+  }
+
+  .modal-image{
+
+    height:240px;
+
+  }
+
+  .modal-content{
+
+    padding:
+      0 20px 25px;
+
+    margin-top:-50px;
+
+  }
+
+  .modal-content h2{
+
+    font-size:27px;
+
+  }
+
+  #videoModal{
+
+    padding:0;
+
+    align-items:center;
+
+    background:#000;
+
+  }
+
+  .video-modal-box{
+
+    width:100%;
+
+    border-radius:0;
+
+  }
+
+  .video-player{
+
+    max-height:
+      80vh;
+
+  }
+
+  .keyboard-help{
+    display:none;
+  }
+
+}
+
+@media(max-width:380px){
+
+  .grid{
+
+    gap:7px;
+
+  }
+
+  .card{
+
+    height:190px;
+
+  }
+
+  .row{
+
+    grid-auto-columns:
+      130px;
+
+  }
+
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty{
+
+  grid-column:
+    1/-1;
+
+  padding:50px 10px;
+
+  text-align:center;
+
+  color:#7f8792;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ===================================================
+     NAVBAR
+=================================================== -->
+
+<header
+  class="navbar"
+  id="navbar"
+>
+
+  <div class="logo">
+    VIS<span>TRA</span>
+  </div>
+
+
+  <nav class="nav">
+
+    <button onclick="showHome()">
+      🏠 Home
+    </button>
+
+    <button onclick="showMovies()">
+      🎬 Movies
+    </button>
+
+    <button onclick="showMusic()">
+      🎵 Music
+    </button>
+
+    <button onclick="showUpload()">
+      📤 Upload
+    </button>
+
+    <button onclick="showPro()">
+      👑 PRO
+    </button>
+
+  </nav>
+
+
+  <div class="nav-right">
+
+    <div class="search">
+
+      🔍
+
+      <input
+        id="searchInput"
+        placeholder="Search VISTRA"
+        oninput="searchMedia(this.value)"
+      >
+
+    </div>
+
+
+    <div class="profile">
+      A
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- ===================================================
+     HOME
+=================================================== -->
+
+<section id="homePage">
+
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="badge">
+      VISTRA ORIGINAL
+    </div>
+
+    <h1>
+      YOUR<br>
+      <span>WORLD</span>
+    </h1>
+
+    <div class="meta">
+
+      <span class="rating">
+        ★ 9.1
+      </span>
+
+      <span>
+        2026
+      </span>
+
+      <span>
+        16+
+      </span>
+
+      <span>
+        AMMAR
+      </span>
+
+    </div>
+
+
+    <p>
+      VISTRA is your entertainment platform
+      for movies, music and creator uploads.
+    </p>
+
+
+    <button
+      class="btn white"
+      onclick="showMovies()"
+    >
+      ▶ Explore
+    </button>
+
+
+    <button
+      class="btn dark"
+      onclick="showUpload()"
+    >
+      📤 Upload
+    </button>
+
+  </div>
+
+</section>
+
+
+<main>
+
+
+<section class="section">
+
+  <div class="section-title">
+
+    <h2>
+      🎬 Public Video Library
+    </h2>
+
+    <span>
+      Uploaded to VISTRA
+    </span>
+
+  </div>
+
+
+  <div
+    class="row"
+    id="homeVideos"
+  ></div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-title">
+
+    <h2>
+      🎵 Public Music Library
+    </h2>
+
+    <span>
+      VISTRA Music
+    </span>
+
+  </div>
+
+
+  <div
+    class="row"
+    id="homeMusic"
+  ></div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-title">
+
+    <h2>
+      ⭐ VISTRA Features
+    </h2>
+
+  </div>
+
+
+  <div class="grid">
+
+    <div class="plan">
+
+      <h2>
+        🎬 Movies
+      </h2>
+
+      <p
+        style="
+          color:#929aa7;
+          line-height:1.7;
+          margin-top:10px;
+        "
+      >
+        Watch videos uploaded to the
+        public VISTRA library.
+      </p>
+
+    </div>
+
+
+    <div class="plan">
+
+      <h2>
+        🎵 Music
+      </h2>
+
+      <p
+        style="
+          color:#929aa7;
+          line-height:1.7;
+          margin-top:10px;
+        "
+      >
+        Upload and play your own
+        audio files.
+      </p>
+
+    </div>
+
+
+    <div class="plan">
+
+      <h2>
+        👑 PRO
+      </h2>
+
+      <p
+        style="
+          color:#929aa7;
+          line-height:1.7;
+          margin-top:10px;
+        "
+      >
+        A premium subscription page
+        ready for payment integration.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+</section>
+
+
+<!-- ===================================================
+     MOVIES PAGE
+=================================================== -->
+
+<section
+  class="page"
+  id="moviesPage"
+>
+
+  <h1>
+    🎬 VISTRA Videos
+  </h1>
+
+  <p class="page-description">
+    Every uploaded public video appears here.
+  </p>
+
+
+  <div
+    class="grid"
+    id="moviesGrid"
+  ></div>
+
+</section>
+
+
+<!-- ===================================================
+     MUSIC PAGE
+=================================================== -->
+
+<section
+  class="page"
+  id="musicPage"
+>
+
+  <h1>
+    🎵 VISTRA Music
+  </h1>
+
+  <p class="page-description">
+    Public music uploaded to the VISTRA server.
+  </p>
+
+
+  <div
+    class="grid"
+    id="musicGrid"
+  ></div>
+
+</section>
+
+
+<!-- ===================================================
+     UPLOAD PAGE
+=================================================== -->
+
+<section
+  class="page"
+  id="uploadPage"
+>
+
+  <h1>
+    📤 VISTRA Upload
+  </h1>
+
+  <p class="page-description">
+    Upload your video or music to the VISTRA server.
+    Once uploaded, it appears in the public library.
+  </p>
+
+
+  <div class="upload-box">
+
+
+    <!-- VIDEO -->
+
+    <h2 style="margin-bottom:20px">
+      🎬 Upload Video
+    </h2>
+
+
+    <div class="field">
+
+      <label>
+        Video title
+      </label>
+
+      <input
+        id="videoTitle"
+        placeholder="Enter video title"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Choose video
+      </label>
+
+      <div class="file-box">
+
+        <input
+          id="videoFile"
+          type="file"
+          accept="video/*"
+        >
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="btn red"
+      id="videoUploadButton"
+      onclick="uploadVideo()"
+    >
+      📤 Upload Video
+    </button>
+
+
+    <hr
+      style="
+        border:0;
+        border-top:1px solid #292f39;
+        margin:30px 0;
+      "
+    >
+
+
+    <!-- MUSIC -->
+
+    <h2 style="margin-bottom:20px">
+      🎵 Upload Music
+    </h2>
+
+
+    <div class="field">
+
+      <label>
+        Music title
+      </label>
+
+      <input
+        id="musicTitle"
+        placeholder="Enter music title"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Choose music
+      </label>
+
+      <div class="file-box">
+
+        <input
+          id="musicFile"
+          type="file"
+          accept="audio/*"
+        >
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="btn red"
+      id="musicUploadButton"
+      onclick="uploadMusic()"
+    >
+      📤 Upload Music
+    </button>
+
+
+    <div
+      id="uploadStatus"
+      style="
+        margin-top:20px;
+        color:#9aa3ae;
+        font-size:12px;
+      "
+    ></div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ===================================================
+     PRO PAGE
+=================================================== -->
+
+<section
+  class="page"
+  id="proPage"
+>
+
+  <h1>
+    👑 VISTRA PRO
+  </h1>
+
+  <p class="page-description">
+    Premium creator and entertainment features.
+  </p>
+
+
+  <div class="plans">
+
+
+    <div class="plan">
+
+      <h2>
+        FREE
+      </h2>
+
+      <div class="price">
+        $0
+        <span>/month</span>
+      </div>
+
+      <ul>
+        <li>✓ Public library</li>
+        <li>✓ Video playback</li>
+        <li>✓ Music playback</li>
+      </ul>
+
+      <button class="btn dark">
+        Current
+      </button>
+
+    </div>
+
+
+    <div class="plan featured">
+
+      <div class="badge">
+        PRO
+      </div>
+
+      <h2>
+        VISTRA PRO
+      </h2>
+
+      <div class="price">
+        $7.99
+        <span>/month</span>
+      </div>
+
+      <ul>
+        <li>✓ Creator uploads</li>
+        <li>✓ HD-ready playback</li>
+        <li>✓ Premium profile</li>
+        <li>✓ Creator dashboard</li>
+        <li>✓ More storage*</li>
+      </ul>
+
+      <button
+        class="btn red"
+        onclick="
+          toast(
+            'Payment system needs to be connected.'
+          )
+        "
+      >
+        Subscribe
+      </button>
+
+    </div>
+
+
+    <div class="plan">
+
+      <h2>
+        YEARLY
+      </h2>
+
+      <div class="price">
+        $79.99
+        <span>/year</span>
+      </div>
+
+      <ul>
+        <li>✓ PRO features</li>
+        <li>✓ Creator tools</li>
+        <li>✓ Premium account</li>
+      </ul>
+
+      <button
+        class="btn red"
+        onclick="
+          toast(
+            'Payment system needs to be connected.'
+          )
+        "
+      >
+        Choose Yearly
+      </button>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ===================================================
+     VIDEO MODAL
+=================================================== -->
+
+<div
+  class="modal"
+  id="videoModal"
+>
+
+  <div class="video-modal-box">
+
+    <button
+      class="close"
+      onclick="closeVideo()"
+    >
+      ×
+    </button>
+
+
+    <video
+      id="videoPlayer"
+      class="video-player"
+      controls
+      playsinline
+    ></video>
+
+
+    <div class="keyboard-help">
+
+      J −10s
+      &nbsp; | &nbsp;
+      L +10s
+      &nbsp; | &nbsp;
+      M Stop
+      &nbsp; | &nbsp;
+      F Fullscreen
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ===================================================
+     MUSIC MODAL
+=================================================== -->
+
+<div
+  class="modal"
+  id="musicModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeMusic()"
+    >
+      ×
+    </button>
+
+
+    <div
+      class="modal-image"
+      id="musicImage"
+    ></div>
+
+
+    <div class="modal-content">
+
+      <h2
+        id="musicTitleDisplay"
+      ></h2>
+
+      <p>
+        VISTRA Music Player
+      </p>
+
+    </div>
+
+
+    <div class="audio-box">
+
+      <audio
+        id="audioPlayer"
+        class="audio-player"
+        controls
+      ></audio>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ===================================================
+     TOAST
+=================================================== -->
+
+<div
+  class="toast"
+  id="toast"
+></div>
+
+
+<script>
+
+/* =====================================================
+   STATE
+===================================================== */
+
+let mediaData={
+  videos:[],
+  music:[]
+};
+
+
+/* =====================================================
+   PAGE FUNCTIONS
+===================================================== */
+
+function hidePages(){
+
+  document
+    .querySelectorAll(".page")
+    .forEach(
+      page =>
+        page.classList.remove(
+          "active"
+        )
+    );
+
+  document
+    .getElementById(
+      "homePage"
+    )
+    .style.display="none";
+
+}
+
+
+function showHome(){
+
+  hidePages();
+
+  document
+    .getElementById(
+      "homePage"
+    )
+    .style.display="block";
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+function showMovies(){
+
+  hidePages();
+
+  document
+    .getElementById(
+      "moviesPage"
+    )
+    .classList.add(
+      "active"
+    );
+
+  renderMovies();
+
+}
+
+
+function showMusic(){
+
+  hidePages();
+
+  document
+    .getElementById(
+      "musicPage"
+    )
+    .classList.add(
+      "active"
+    );
+
+  renderMusic();
+
+}
+
+
+function showUpload(){
+
+  hidePages();
+
+  document
+    .getElementById(
+      "uploadPage"
+    )
+    .classList.add(
+      "active"
+    );
+
+}
+
+
+function showPro(){
+
+  hidePages();
+
+  document
+    .getElementById(
+      "proPage"
+    )
+    .classList.add(
+      "active"
+    );
+
+}
+
+
+/* =====================================================
+   GET SERVER LIBRARY
+===================================================== */
+
+async function loadMedia(){
+
+  try{
+
+    const response =
+      await fetch(
+        "/api/media"
+      );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        "Server error"
+      );
+
+    }
+
+
+    mediaData =
+      await response.json();
+
+
+    renderHome();
+
+    renderMovies();
+
+    renderMusic();
+
+
+  }catch(error){
+
+    console.error(error);
+
+    toast(
+      "Could not connect to VISTRA server."
+    );
+
+  }
+
+}
+
+
+/* =====================================================
+   MOVIE CARD
+===================================================== */
+
+function movieCard(video){
+
+  const card =
+    document.createElement(
+      "div"
+    );
+
+  card.className="card";
+
+
+  card.innerHTML=`
+
+    <button
+      class="add-button"
+      onclick="
+        event.stopPropagation();
+        toast('Added to My List')
+      "
+    >
+      +
+    </button>
+
+
+    <img
+      src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=700&q=80"
+      alt=""
+    >
+
+
+    <div class="card-gradient"></div>
+
+
+    <div class="card-info">
+
+      <div class="card-title">
+        ${escapeHTML(video.title)}
+      </div>
+
+      <div class="card-meta">
+
+        <span class="rating">
+          ▶ WATCH
+        </span>
+
+        <span>
+          ${formatSize(video.size)}
+        </span>
+
+      </div>
+
+    </div>
+
+  `;
+
+
+  card.onclick=()=>{
+
+    openVideo(
+      video.url,
+      video.title
+    );
+
+  };
+
+
+  return card;
+
+}
+
+
+/* =====================================================
+   MUSIC CARD
+===================================================== */
+
+function musicCard(song){
+
+  const card =
+    document.createElement(
+      "div"
+    );
+
+  card.className=
+    "card music-card";
+
+
+  card.innerHTML=`
+
+    <img
+      src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=700&q=80"
+      alt=""
+    >
+
+    <div class="card-gradient"></div>
+
+
+    <button
+      class="music-play"
+    >
+      ▶
+    </button>
+
+
+    <div class="card-info">
+
+      <div class="card-title">
+        ${escapeHTML(song.title)}
+      </div>
+
+      <div class="card-meta">
+
+        <span>
+          Tamil Music
+        </span>
+
+        <span>
+          ${formatSize(song.size)}
+        </span>
+
+      </div>
+
+    </div>
+
+  `;
+
+
+  card.onclick=()=>{
+
+    playMusic(
+      song
+    );
+
+  };
+
+
+  return card;
+
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+function renderHome(){
+
+  const videoBox=
+    document.getElementById(
+      "homeVideos"
+    );
+
+  const musicBox=
+    document.getElementById(
+      "homeMusic"
+    );
+
+
+  videoBox.innerHTML="";
+
+  musicBox.innerHTML="";
+
+
+  mediaData.videos
+    .slice(0,12)
+    .forEach(
+      video=>{
+        videoBox.appendChild(
+          movieCard(video)
+        );
+      }
+    );
+
+
+  mediaData.music
+    .slice(0,12)
+    .forEach(
+      song=>{
+        musicBox.appendChild(
+          musicCard(song)
+        );
+      }
+    );
+
+
+  if(
+    mediaData.videos.length===0
+  ){
+
+    videoBox.innerHTML=
+      emptyMessage(
+        "No videos uploaded yet."
+      );
+
+  }
+
+
+  if(
+    mediaData.music.length===0
+  ){
+
+    musicBox.innerHTML=
+      emptyMessage(
+        "No music uploaded yet."
+      );
+
+  }
+
+}
+
+
+/* =====================================================
+   MOVIES
+===================================================== */
+
+function renderMovies(){
+
+  const grid=
+    document.getElementById(
+      "moviesGrid"
+    );
+
+  grid.innerHTML="";
+
+
+  if(
+    mediaData.videos.length===0
+  ){
+
+    grid.innerHTML=
+      emptyMessage(
+        "No public videos yet."
+      );
+
+    return;
+
+  }
+
+
+  mediaData.videos.forEach(
+    video=>{
+      grid.appendChild(
+        movieCard(video)
+      );
+    }
+  );
+
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+function renderMusic(){
+
+  const grid=
+    document.getElementById(
+      "musicGrid"
+    );
+
+  grid.innerHTML="";
+
+
+  if(
+    mediaData.music.length===0
+  ){
+
+    grid.innerHTML=
+      emptyMessage(
+        "No public music yet."
+      );
+
+    return;
+
+  }
+
+
+  mediaData.music.forEach(
+    song=>{
+      grid.appendChild(
+        musicCard(song)
+      );
+    }
+  );
+
+}
+
+
+/* =====================================================
+   VIDEO PLAYER
+===================================================== */
+
+function openVideo(
+  url,
+  title
+){
+
+  const modal=
+    document.getElementById(
+      "videoModal"
+    );
+
+  const player=
+    document.getElementById(
+      "videoPlayer"
+    );
+
+
+  player.pause();
+
+  player.src=url;
+
+  player.load();
+
+
+  modal.classList.add(
+    "show"
+  );
+
+
+  player.play()
+    .catch(
+      ()=>{}
+    );
+
+}
+
+
+function closeVideo(){
+
+  const modal=
+    document.getElementById(
+      "videoModal"
+    );
+
+  const player=
+    document.getElementById(
+      "videoPlayer"
+    );
+
+
+  player.pause();
+
+  player.removeAttribute(
+    "src"
+  );
+
+  player.load();
+
+
+  modal.classList.remove(
+    "show"
+  );
+
+}
+
+
+/* =====================================================
+   VIDEO KEYBOARD
+===================================================== */
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    const modal=
+      document.getElementById(
+        "videoModal"
+      );
+
+    const player=
+      document.getElementById(
+        "videoPlayer"
+      );
+
+
+    if(
+      !modal.classList.contains(
+        "show"
+      )
+    ){
+
+      return;
+
+    }
+
+
+    const key=
+      event.key.toLowerCase();
+
+
+    if(
+      key==="j"
+    ){
+
+      event.preventDefault();
+
+      player.currentTime=
+        Math.max(
+          0,
+          player.currentTime-10
+        );
+
+      toast(
+        "⏪ 10 seconds"
+      );
+
+    }
+
+
+    if(
+      key==="l"
+    ){
+
+      event.preventDefault();
+
+      if(
+        Number.isFinite(
+          player.duration
+        )
+      ){
+
+        player.currentTime=
+          Math.min(
+            player.duration,
+            player.currentTime+10
+          );
+
+      }else{
+
+        player.currentTime+=10;
+
+      }
+
+      toast(
+        "⏩ 10 seconds"
+      );
+
+    }
+
+
+    if(
+      key==="m"
+    ){
+
+      event.preventDefault();
+
+      player.pause();
+
+      player.currentTime=0;
+
+      toast(
+        "⏹ Video stopped"
+      );
+
+    }
+
+
+    if(
+      key==="f"
+    ){
+
+      event.preventDefault();
+
+      fullscreenVideo();
+
+    }
+
+
+    if(
+      key==="escape"
+    ){
+
+      closeVideo();
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   FULLSCREEN
+===================================================== */
+
+function fullscreenVideo(){
+
+  const player=
+    document.getElementById(
+      "videoPlayer"
+    );
+
+
+  if(
+    document.fullscreenElement
+  ){
+
+    document
+      .exitFullscreen()
+      .catch(
+        ()=>{}
+      );
+
+    return;
+
+  }
+
+
+  if(
+    player.requestFullscreen
+  ){
+
+    player
+      .requestFullscreen()
+      .catch(
+        ()=>{}
+      );
+
+  }
+
+}
+
+
+/* =====================================================
+   MUSIC PLAYER
+===================================================== */
+
+function playMusic(song){
+
+  const modal=
+    document.getElementById(
+      "musicModal"
+    );
+
+  const audio=
+    document.getElementById(
+      "audioPlayer"
+    );
+
+
+  document.getElementById(
+    "musicImage"
+  ).style.backgroundImage=
+    "url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1000&q=80')";
+
+
+  document.getElementById(
+    "musicTitleDisplay"
+  ).textContent=
+    song.title;
+
+
+  audio.pause();
+
+  audio.src=
+    song.url;
+
+  audio.load();
+
+
+  modal.classList.add(
+    "show"
+  );
+
+
+  audio.play()
+    .catch(
+      ()=>{}
+    );
+
+}
+
+
+function closeMusic(){
+
+  const modal=
+    document.getElementById(
+      "musicModal"
+    );
+
+  const audio=
+    document.getElementById(
+      "audioPlayer"
+    );
+
+
+  audio.pause();
+
+  audio.removeAttribute(
+    "src"
+  );
+
+  audio.load();
+
+
+  modal.classList.remove(
+    "show"
+  );
+
+}
+
+
+/* =====================================================
+   VIDEO UPLOAD
+===================================================== */
+
+async function uploadVideo(){
+
+  const fileInput=
+    document.getElementById(
+      "videoFile"
+    );
+
+  const titleInput=
+    document.getElementById(
+      "videoTitle"
+    );
+
+  const button=
+    document.getElementById(
+      "videoUploadButton"
+    );
+
+
+  const file=
+    fileInput.files[0];
+
+
+  if(!file){
+
+    toast(
+      "Choose a video first."
+    );
+
+    return;
+
+  }
+
+
+  const formData=
+    new FormData();
+
+
+  formData.append(
+    "video",
+    file
+  );
+
+
+  formData.append(
+    "title",
+    titleInput.value.trim() ||
+    file.name
+  );
+
+
+  button.disabled=true;
+
+  button.textContent=
+    "Uploading...";
+
+
+  try{
+
+    const response=
+      await fetch(
+        "/api/upload/video",
+        {
+          method:"POST",
+          body:formData
+        }
+      );
+
+
+    const result=
+      await response.json();
+
+
+    if(!response.ok){
+
+      throw new Error(
+        result.message ||
+        "Upload failed"
+      );
+
+    }
+
+
+    toast(
+      "🎬 Video uploaded!"
+    );
+
+
+    titleInput.value="";
+
+    fileInput.value="";
+
+
+    await loadMedia();
+
+
+    openVideo(
+      result.item.url,
+      result.item.title
+    );
+
+
+  }catch(error){
+
+    console.error(error);
+
+    toast(
+      error.message
+    );
+
+  }finally{
+
+    button.disabled=false;
+
+    button.textContent=
+      "📤 Upload Video";
+
+  }
+
+}
+
+
+/* =====================================================
+   MUSIC UPLOAD
+===================================================== */
+
+async function uploadMusic(){
+
+  const fileInput=
+    document.getElementById(
+      "musicFile"
+    );
+
+  const titleInput=
+    document.getElementById(
+      "musicTitle"
+    );
+
+  const button=
+    document.getElementById(
+      "musicUploadButton"
+    );
+
+
+  const file=
+    fileInput.files[0];
+
+
+  if(!file){
+
+    toast(
+      "Choose music first."
+    );
+
+    return;
+
+  }
+
+
+  const formData=
+    new FormData();
+
+
+  formData.append(
+    "music",
+    file
+  );
+
+
+  formData.append(
+    "title",
+    titleInput.value.trim() ||
+    file.name
+  );
+
+
+  button.disabled=true;
+
+  button.textContent=
+    "Uploading...";
+
+
+  try{
+
+    const response=
+      await fetch(
+        "/api/upload/music",
+        {
+          method:"POST",
+          body:formData
+        }
+      );
+
+
+    const result=
+      await response.json();
+
+
+    if(!response.ok){
+
+      throw new Error(
+        result.message ||
+        "Upload failed"
+      );
+
+    }
+
+
+    toast(
+      "🎵 Music uploaded!"
+    );
+
+
+    titleInput.value="";
+
+    fileInput.value="";
+
+
+    await loadMedia();
+
+
+    playMusic(
+      result.item
+    );
+
+
+  }catch(error){
+
+    console.error(error);
+
+    toast(
+      error.message
+    );
+
+  }finally{
+
+    button.disabled=false;
+
+    button.textContent=
+      "📤 Upload Music";
+
+  }
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+function searchMedia(value){
+
+  const query=
+    value
+      .trim()
+      .toLowerCase();
+
+
+  if(!query){
+
+    return;
+
+  }
+
+
+  hidePages();
+
+
+  const movies=
+    mediaData.videos.filter(
+      video=>
+        video.title
+          .toLowerCase()
+          .includes(query)
+    );
+
+
+  const music=
+    mediaData.music.filter(
+      song=>
+        song.title
+          .toLowerCase()
+          .includes(query)
+    );
+
+
+  const page=
+    document.createElement(
+      "section"
+    );
+
+
+  page.className=
+    "page active";
+
+
+  page.innerHTML=`
+
+    <h1>
+      🔍 Search
+    </h1>
+
+    <p class="page-description">
+      Results for "${escapeHTML(query)}"
+    </p>
+
+    <div
+      class="grid"
+      id="temporarySearchGrid"
+    ></div>
+
+  `;
+
+
+  document.body.appendChild(
+    page
+  );
+
+
+  const grid=
+    page.querySelector(
+      "#temporarySearchGrid"
+    );
+
+
+  movies.forEach(
+    video=>{
+      grid.appendChild(
+        movieCard(video)
+      );
+    }
+  );
+
+
+  music.forEach(
+    song=>{
+      grid.appendChild(
+        musicCard(song)
+      );
+    }
+  );
+
+
+  if(
+    movies.length===0 &&
+    music.length===0
+  ){
+
+    grid.innerHTML=
+      emptyMessage(
+        "Nothing found."
+      );
+
+  }
+
+}
+
+
+/* =====================================================
+   UTILITIES
+===================================================== */
+
+function emptyMessage(
+  message
+){
+
+  return `
+    <div class="empty">
+      ${escapeHTML(message)}
+    </div>
+  `;
+
+}
+
+
+function formatSize(bytes){
+
+  if(!bytes){
+    return "";
+  }
+
+  const mb=
+    bytes /
+    (1024*1024);
+
+  if(mb<1024){
+
+    return mb.toFixed(1)+" MB";
+
+  }
+
+  return (
+    mb/1024
+  ).toFixed(2)+" GB";
+
+}
+
+
+function escapeHTML(text){
+
+  return String(text)
+
+    .replaceAll(
+      "&",
+      "&amp;"
+    )
+
+    .replaceAll(
+      "<",
+      "&lt;"
+    )
+
+    .replaceAll(
+      ">",
+      "&gt;"
+    )
+
+    .replaceAll(
+      '"',
+      "&quot;"
+    )
+
+    .replaceAll(
+      "'",
+      "&#039;"
+    );
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+window.addEventListener(
+  "scroll",
+  function(){
+
+    const navbar=
+      document.getElementById(
+        "navbar"
+      );
+
+
+    if(
+      window.scrollY>40
+    ){
+
+      navbar.classList.add(
+        "scrolled"
+      );
+
+    }else{
+
+      navbar.classList.remove(
+        "scrolled"
+      );
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   CLOSE MODALS
+===================================================== */
+
+document
+  .getElementById(
+    "videoModal"
+  )
+  .addEventListener(
+    "click",
+    function(event){
+
+      if(
+        event.target.id===
+        "videoModal"
+      ){
+
+        closeVideo();
+
+      }
+
+    }
+  );
+
+
+document
+  .getElementById(
+    "musicModal"
+  )
+  .addEventListener(
+    "click",
+    function(event){
+
+      if(
+        event.target.id===
+        "musicModal"
+      ){
+
+        closeMusic();
+
+      }
+
+    }
+  );
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+let toastTimer;
+
+
+function toast(message){
+
+  const box=
+    document.getElementById(
+      "toast"
+    );
+
+
+  box.textContent=
+    message;
+
+
+  box.classList.add(
+    "show"
+  );
+
+
+  clearTimeout(
+    toastTimer
+  );
+
+
+  toastTimer=
+    setTimeout(
+      function(){
+
+        box.classList.remove(
+          "show"
+        );
+
+      },
+      2500
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadMedia();
+
+</script>
+
+</body>
+
+</html>
+```
